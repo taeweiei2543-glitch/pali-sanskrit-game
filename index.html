@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ภารกิจพิชิตภาษา บาลี VS สันสกฤต</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#7be0ff;--bg2:#d4f8c9;--card:#fff;--tx:#25254a;--mut:#5d5d85;--pri:#6a3df0;--gold:#ffc83d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1d2a5c;--bg2:#2a1d4d;--card:#2b2b52;--tx:#f3f1ff;--mut:#b9b6e6;color-scheme:dark}}
+:root[data-theme="dark"]{--bg1:#1d2a5c;--bg2:#2a1d4d;--card:#2b2b52;--tx:#f3f1ff;--mut:#b9b6e6}
+*{box-sizing:border-box}html,body{min-height:100%;margin:0}
+body{font-family:'Kanit','Noto Sans Thai',Tahoma,sans-serif;color:var(--tx);background:var(--bg1) linear-gradient(var(--bg1),var(--bg2)) fixed}
+#app{max-width:860px;margin:auto;padding:10px 12px 28px}
+.top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.top h1{font-size:clamp(15px,3.6vw,22px);margin:0;flex:1 1 220px}
+.pill{background:var(--card);border-radius:99px;padding:4px 12px;font-weight:700;box-shadow:0 3px 0 #0002}
+.ib{border:0;background:var(--card);border-radius:50%;width:40px;height:40px;font-size:18px;box-shadow:0 3px 0 #0002;cursor:pointer}
+.pg{height:12px;background:#fff6;border-radius:9px;margin:10px 0;overflow:hidden}
+.pg i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffc83d,#ff7a59);border-radius:9px;transition:width .5s}
+.stage{display:flex;align-items:flex-end;justify-content:center;gap:6px;flex-wrap:wrap;margin:6px 0}
+.cw{text-align:center;width:clamp(84px,20vw,120px);font-size:12px}
+.cw b{display:block;background:var(--card);border-radius:9px;padding:1px 4px}
+.ch{width:100%;overflow:visible;filter:drop-shadow(0 6px 4px #0003);animation:bob 2.2s ease-in-out infinite}
+.cw:nth-child(2) .ch{animation-delay:.4s}.cw:nth-child(3) .ch{animation-delay:.8s}
+.ey{animation:blink 4s infinite;transform-box:fill-box;transform-origin:center}
+.bubble{flex-basis:100%;max-width:560px;background:#fff;color:#25254a;border-radius:18px;padding:8px 14px;text-align:center;font-weight:600;box-shadow:0 4px 0 #0002}
+.card{background:var(--card);border-radius:22px;padding:16px;box-shadow:0 8px 0 #0002;margin-top:10px}
+.c{text-align:center}.card h1,.card h2{margin:4px 0 8px}
+.mut{color:var(--mut)}
+.btn{font:inherit;font-weight:700;font-size:clamp(16px,4vw,20px);border:0;border-radius:18px;padding:14px 16px;cursor:pointer;color:#fff;box-shadow:0 6px 0 #0003;transition:transform .1s}
+.btn:active{transform:translateY(5px);box-shadow:0 1px 0 #0003}
+.pri{background:linear-gradient(#9b7bff,#6a3df0)}
+.c0{background:linear-gradient(#4fc3f7,#0288d1)}.c1{background:linear-gradient(#ff8a65,#e64a19)}.c2{background:linear-gradient(#81c784,#388e3c)}.c3{background:linear-gradient(#ba68c8,#7b1fa2)}
+.o.right{background:linear-gradient(#66e08a,#1faa59)!important}
+.o.wrong{background:linear-gradient(#ffb74d,#f57c00)!important;opacity:.85}
+.btn:disabled{cursor:default}
+.opts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.q{font-size:clamp(20px,5vw,28px);font-weight:700;text-align:center;margin:10px 0 16px}
+.w{font-size:clamp(44px,12vw,76px);color:var(--pri)}
+.fb{margin-top:14px;padding:12px 14px;border-radius:16px;animation:pop .35s}
+.fb.ok{background:#d9f8e4;color:#14532d}.fb.no{background:#fff0d9;color:#7a3b00}.fb p{margin:6px 0}.fb .btn{margin-top:6px;width:100%}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mg>div{display:grid;gap:10px;align-content:start}
+.m{background:linear-gradient(#fff,#e8e4ff);color:#25254a;font-size:clamp(14px,3.6vw,18px)}
+.m.sel{outline:4px solid var(--gold)}.m.right{background:linear-gradient(#66e08a,#1faa59);color:#fff}
+.shake{animation:wob .4s}
+.stars span{font-size:48px;display:inline-block;filter:grayscale(1) opacity(.35)}
+.stars span.on{filter:none;animation:pop .6s both}
+.big{font-size:64px}
+.cw.hop{animation:hop .8s}.cw.wob{animation:wob .6s}
+.cf{position:fixed;top:-30px;z-index:9;animation:fall 1.6s ease-in forwards;pointer-events:none}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-8px) rotate(1.5deg)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-30px) scale(1.08)}}
+@keyframes wob{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ch,.ey{animation:none}}
+</style></head><body><div id="app">
+<div class="top"><h1>🔍 ภารกิจพิชิตภาษา <span style="color:#e64a19">บาลี</span> VS <span style="color:#6a3df0">สันสกฤต</span></h1>
+<span class="pill">🪙 <span id="sc">0</span></span><span class="pill">⭐ <span id="sr">0</span></span>
+<button class="ib" id="snd" onclick="tg()" aria-label="เสียง">🔊</button><button class="ib" onclick="start()" aria-label="เริ่มใหม่">🔄</button></div>
+<div class="pg"><i id="bar"></i></div><div id="main"></div></div>
+<script>
+const $=s=>document.querySelector(s),sh=a=>[...a].sort(()=>Math.random()-.5);
+let S={snd:true},AC;
+const HINT="คำใบ้: สังเกต ศ ษ ฤ รร และตัวสะกดตัวตาม แต่ต้องดูหลายอย่างประกอบกันนะ";
+const L1=[["ปัญญา",0,"ปัญญา เป็นบาลี (ปญฺญา) มีตัวสะกดตัวตามซ้อนกัน (ญ-ญ) และไม่มี ศ ษ ส่วนรูปสันสกฤตคือ “ปรัชญา”"],
+["วิชา",0,"วิชา มาจากบาลี (วิชฺชา) ไม่มี ศ ษ ส่วนรูปสันสกฤตคือ “วิทยา”"],
+["ศึกษา",1,"ศึกษา มี ศ และ ษ ซึ่งพบในสันสกฤต (ศิกฺษา) ส่วนรูปบาลีคือ “สิกขา”"],
+["กษัตริย์",1,"กษัตริย์ มี ษ และพยัญชนะควบ (ตฺร) เป็นสันสกฤต (กฺษตฺริย) ส่วนรูปบาลีคือ “ขัตติยะ”"],
+["เมตตา",0,"เมตตา เป็นบาลี (เมตฺตา) มีตัวสะกดตัวตาม ต-ต ส่วนรูปสันสกฤตคือ “ไมตรี”"],
+["ศีรษะ",1,"ศีรษะ มี ศ และ ษ เป็นสันสกฤต (ศีรฺษ) ส่วนรูปบาลีคือ “สีสะ”"]];
+const M=[["ศาสตร์","มีพยัญชนะ ศ","ศ พบในคำสันสกฤต ส่วนบาลีมักใช้ ส แทน เช่น สัตถะ"],
+["ภิกษุ","มีพยัญชนะ ษ","ษ พบในคำสันสกฤต ส่วนรูปบาลีคือ ภิกขุ"],
+["ฤๅษี","มีสระ ฤ หรือ ฤๅ","ฤ ฤๅ เป็นลักษณะของสันสกฤต บาลีไม่มีสระกลุ่มนี้"],
+["สรรพ","ใช้ รร","รร พบบ่อยในคำสันสกฤต เช่น สรรพ กรรม"],
+["สัจจะ","มีตัวสะกดตัวตามซ้อนกัน","บาลีมักมีตัวสะกดตัวตามซ้อนกัน เช่น สัจจะ (จ-จ)"]];
+const L3=[["ภาษาบาลีไม่มีพยัญชนะ ศ และ ษ (มักใช้ ส แทน)",0,"จริง! เช่น สีสะ ส่วน ศ ษ พบในสันสกฤต"],
+["ภาษาสันสกฤตไม่มีสระ ฤ และ ฤๅ",1,"หลอก! ฤ ฤๅ เป็นลักษณะของสันสกฤต เช่น ฤๅษี"],
+["คำที่มี รร เช่น “สรรพ” มักมาจากสันสกฤต",0,"จริง! รร พบบ่อยในสันสกฤต แต่ควรดูลักษณะอื่นประกอบด้วย"],
+["บาลีมักมีตัวสะกดตัวตามซ้อนกัน เช่น สัจจะ",0,"จริง! สัจจะ มี จ-จ ซ้อนกัน เป็นลักษณะที่พบบ่อยในบาลี"],
+["ถ้าคำไม่มี ศ ษ ฤ แสดงว่าเป็นบาลีแน่นอน",1,"หลอก! เช่น “มิตร” ไม่มี ศ ษ ฤ แต่เป็นสันสกฤต ต้องดูหลายลักษณะประกอบกัน"],
+["คำไทยบางคู่มีทั้งรูปบาลีและสันสกฤต เช่น สิกขา – ศึกษา",0,"จริง! หลายคำมาจากรากเดียวกัน แต่เขียนต่างกันตามภาษา"]];
+const L4=[["คำใดเป็นคำบาลี","เมตตา","ศึกษา","กษัตริย์","ศีรษะ","เมตตา มาจากบาลี (เมตฺตา) มีตัวสะกดตัวตามซ้อน ส่วนอีก 3 คำเป็นสันสกฤตที่มี ศ ษ"],
+["ลักษณะใดพบในคำสันสกฤต แต่ไม่พบในคำบาลี","มีพยัญชนะ ศ และ ษ","มักใช้ ส","มีตัวสะกดตัวตามซ้อนกัน","ใช้ ฬ","บาลีไม่มี ศ ษ แต่สันสกฤตมี ส่วนตัวสะกดตัวตามและ ฬ เป็นลักษณะที่พบในบาลี"],
+["ข้อใดเป็นคำสันสกฤตทั้งหมด","ศาสตร์ ฤๅษี","ปัญญา สัจจะ","เมตตา วิชา","อัคคี ขันติ","ศาสตร์ และ ฤๅษี มี ศ ษ ฤ ซึ่งเป็นลักษณะของสันสกฤต ส่วนข้ออื่นเป็นคำบาลี"],
+["รูปบาลีของคำสันสกฤต “ศึกษา” คือคำใด","สิกขา","ขัตติยะ","ไมตรี","ปรัชญา","ศึกษา (สันสกฤต) ตรงกับ สิกขา (บาลี)"],
+["รูปสันสกฤตของคำบาลี “เมตตา” คือคำใด","ไมตรี","ศรัทธา","ศีรษะ","วิทยา","เมตตา (บาลี) ตรงกับ ไมตรี (สันสกฤต)"],
+["คำใดมี รร ซึ่งเป็นลักษณะที่พบบ่อยในคำสันสกฤต","สรรพ","สัจจะ","ธัมมะ","กัมมะ","รร พบบ่อยในสันสกฤต เช่น สรรพ กรรม ส่วนที่เหลือเป็นรูปบาลีที่มีตัวสะกดตัวตาม"],
+["คำใดมีตัวสะกดตัวตามซ้อนกัน ซึ่งพบบ่อยในบาลี","สัจจะ","ศาสตร์","กษัตริย์","ฤๅษี","สัจจะ มี จ-จ ซ้อนกัน ส่วนคำอื่นมี ศ ษ ฤ ซึ่งเป็นสันสกฤต"],
+["เพราะเหตุใดจึงไม่ควรตัดสินจากลักษณะเดียว","บางคำเปลี่ยนรูปเมื่อมาใช้ในไทย หรือไม่มีลักษณะเด่นชัด","ทุกคำมีลักษณะเหมือนกัน","ภาษาไทยไม่เคยยืมคำมา","บาลีกับสันสกฤตเป็นภาษาเดียวกัน","เช่น “มิตร” ไม่มี ศ ษ ฤ แต่เป็นสันสกฤต จึงควรดูหลายลักษณะและเทียบรูปคำ"],
+["รูปสันสกฤตของคำบาลี “อัคคี” คือคำใด","อัคนี","อัคคะ","อักษร","อัชฌา","อัคคี (บาลี) ตรงกับ อัคนี (สันสกฤต)"],
+["ข้อใดจับคู่ บาลี – สันสกฤต ถูกต้อง (เรียงตามลำดับ บาลี – สันสกฤต)","สิกขา – ศึกษา","ศึกษา – สิกขา","เมตตา – ศีรษะ","วิชา – ฤๅษี","สิกขา เป็นบาลี และ ศึกษา เป็นสันสกฤต ที่มาจากรากเดียวกัน"]];
+const LV=[{n:"นักสืบจับภาษา",i:"🔎",c:["d"],t:"ยินดีต้อนรับสู่อาณาจักรภาษา! ช่วยฉันสืบว่าคำเหล่านี้เป็นบาลีหรือสันสกฤต"},
+{n:"จับคู่คำปริศนา",i:"🧩",c:["g"],t:"ผู้พิทักษ์คำศัพท์ขอให้จับคู่คำกับลักษณะที่ตรงกัน"},
+{n:"จริงหรือหลอก",i:"⚖️",c:["w"],t:"นักรบภาษาท้าทาย! ข้อความไหนจริง ข้อความไหนหลอก?"},
+{n:"บอสใหญ่พิชิตภาษา",i:"👑",c:["d","w","g"],t:"ด่านสุดท้าย! รวมพลังสามฮีโร่ตอบ 10 ข้อ"}];
+const CH={d:["#ffd27a","#ef9a2b","นักสืบภาษา"],w:["#ff9a9a","#e04a4a","นักรบภาษา"],g:["#a9b8ff","#5b6bd6","ผู้พิทักษ์คำศัพท์"]};
+const AX={d:'<path d="M24 28Q50 -4 76 28Z" fill="#7a4a24"/><rect x="18" y="26" width="64" height="7" rx="3.5" fill="#5e3718"/><circle cx="82" cy="82" r="10" fill="#bff3ff99" stroke="#c8962b" stroke-width="4"/><path d="M75 90L66 100" stroke="#c8962b" stroke-width="5" stroke-linecap="round"/>',
+w:'<path d="M22 38Q22 8 50 8Q78 8 78 38Z" fill="#cfd8dc"/><path d="M50 8Q60 -6 76 4Q62 6 56 16Z" fill="#e53935"/><path d="M86 62V98" stroke="#eceff1" stroke-width="5" stroke-linecap="round"/><rect x="80" y="82" width="12" height="4" fill="#c8962b"/>',
+g:'<path d="M26 26Q50 -6 74 26Z" fill="#5c6bc0"/><text x="50" y="21" font-size="13" text-anchor="middle">⭐</text><rect x="6" y="70" width="24" height="28" rx="3" fill="#8e24aa"/><rect x="10" y="74" width="16" height="20" fill="#fff8e1"/><text x="18" y="89" font-size="12" text-anchor="middle" fill="#8e24aa">ก</text>'};
+function ch(t){const[c1,c2]=CH[t],id="g"+t;return`<svg viewBox="0 -8 100 118" class="ch"><defs><radialGradient id="${id}" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".25" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></radialGradient></defs><ellipse cx="50" cy="104" rx="26" ry="5" fill="#0003"/><ellipse cx="50" cy="80" rx="24" ry="22" fill="url(#${id})"/><circle cx="50" cy="44" r="30" fill="url(#${id})"/><g class="ey"><ellipse cx="39" cy="46" rx="6" ry="8" fill="#fff"/><ellipse cx="61" cy="46" rx="6" ry="8" fill="#fff"/><circle cx="40" cy="47" r="4" fill="#25254a"/><circle cx="62" cy="47" r="4" fill="#25254a"/><circle cx="41.5" cy="45" r="1.5" fill="#fff"/><circle cx="63.5" cy="45" r="1.5" fill="#fff"/></g><circle cx="30" cy="57" r="4" fill="#ff7a9a66"/><circle cx="70" cy="57" r="4" fill="#ff7a9a66"/><path d="M43 58Q50 65 57 58" stroke="#25254a" stroke-width="2.5" fill="none" stroke-linecap="round"/>${AX[t]}</svg>`}
+function stage(k,m){return`<div class="stage">${k.map(x=>`<div class="cw">${ch(x)}<b>${CH[x][2]}</b></div>`).join('')}<div class="bubble" id="bub">${m}</div></div>`}
+const say=m=>$('#bub').textContent=m,react=c=>document.querySelectorAll('.cw').forEach(e=>{e.classList.add(c);setTimeout(()=>e.classList.remove(c),900)});
+function beep(f,d=.12,t=0){if(!S.snd)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain(),n=AC.currentTime+t;o.type="triangle";o.frequency.value=f;g.gain.setValueAtTime(.15,n);g.gain.exponentialRampToValueAtTime(.001,n+d);o.connect(g);g.connect(AC.destination);o.start(n);o.stop(n+d)}catch(e){}}
+const yay=()=>[523,659,784,1047].forEach((f,i)=>beep(f,.15,i*.09)),oops=()=>beep(280,.25);
+function fx(){for(let i=0;i<22;i++){const e=document.createElement('i');e.className='cf';e.textContent=['⭐','🎉','✨','🪙'][i%4];e.style.cssText=`left:${Math.random()*100}vw;animation-delay:${Math.random()*.3}s;font-size:${16+Math.random()*16}px`;document.body.append(e);setTimeout(()=>e.remove(),2000)}}
+const R=h=>$('#main').innerHTML=h,bar=p=>$('#bar').style.width=p*100+'%';
+function hud(){$('#sc').textContent=S.sc;$('#sr').textContent=S.st.reduce((a,b)=>a+(b||0),0)}
+function tg(){S.snd=!S.snd;$('#snd').textContent=S.snd?'🔊':'🔇'}
+function start(){S={sc:0,st:[],snd:S.snd};hud();bar(0);R(stage(['d','w','g'],"พร้อมออกผจญภัยในอาณาจักรภาษาหรือยัง?")+`<div class="card c"><h1>ภารกิจพิชิตภาษา</h1><p class="mut">4 ด่าน ตอบถูกได้ข้อละ 10 คะแนน สะสมดาว ⭐ และเหรียญรางวัล 🏅<br>ข้อควรจำ: ต้องสังเกตหลายลักษณะประกอบกัน ไม่ใช่ลักษณะเดียว</p><button class="btn pri" onclick="go(0)">▶ เริ่มภารกิจ</button></div>`)}
+function go(k){S.lv=k;bar(0);R(stage(LV[k].c,LV[k].t)+`<div class="card c"><div class="big">${LV[k].i}</div><h2>ด่านที่ ${k+1} ${LV[k].n}</h2><button class="btn pri" onclick="run()">ลุยเลย!</button></div>`)}
+function run(){const k=S.lv;if(k==1)return match();
+const o=["บาลี","สันสกฤต"],tf=["จริง ✅","หลอก ❌"];
+S.q=sh(k==0?L1.map(([q,a,e])=>({l:"คำนี้เป็นภาษาอะไร?",q:`<span class="w">${q}</span>`,o,a,e})):k==2?L3.map(([q,a,e])=>({l:"ข้อความนี้จริงหรือหลอก?",q,o:tf,a,e})):L4.map(([q,c,...r])=>{const e=r.pop(),op=sh([c,...r]);return{l:"ตอบคำถามบอส",q,o:op,a:op.indexOf(c),e}}));
+S.i=0;S.ok=0;ask()}
+function ask(){const k=S.lv,x=S.q[S.i],n=S.q.length;bar(S.i/n);
+R(stage(LV[k].c,"คิดดี ๆ นะ!")+`<div class="card"><div class="mut">ข้อ ${S.i+1} / ${n}</div><h2>${x.l}</h2><div class="q">${x.q}</div><div class="opts">${x.o.map((t,j)=>`<button class="btn o c${k==3?j:j+(k==2?2:0)}" onclick="pick(${j})">${k==3?"กขคง"[j]+". ":""}${t}</button>`).join('')}</div><div id="fb"></div></div>`)}
+function pick(j){const x=S.q[S.i],ok=j==x.a;
+document.querySelectorAll('.o').forEach((b,i)=>{b.disabled=true;if(i==x.a)b.classList.add('right');else if(i==j)b.classList.add('wrong')});
+if(ok){S.sc+=10;S.ok++;yay();fx();react('hop');say("เก่งมาก! 🎉")}else{oops();react('wob');say("ไม่เป็นไร เรียนรู้ไปด้วยกัน 💪")}
+hud();$('#fb').innerHTML=`<div class="fb ${ok?'ok':'no'}"><b>${ok?"🎉 ถูกต้อง! +10 คะแนน":"💡 ไม่เป็นไรนะ ลองดูคำอธิบาย"}</b>${ok?"":`<p>${HINT}</p>`}<p>${x.e}</p><button class="btn pri" onclick="nx()">${S.i+1<S.q.length?"ข้อต่อไป ➜":"สรุปด่าน ➜"}</button></div>`;
+$('#fb').scrollIntoView({behavior:'smooth',block:'nearest'})}
+function nx(){S.i++;S.i<S.q.length?ask():end(S.ok,S.q.length)}
+function match(){S.m={s:null,x:{},d:0};S.ok=0;const I=M.map((_,i)=>i);
+R(stage(["g"],"แตะคำก่อน แล้วแตะลักษณะที่ตรงกัน")+`<div class="card"><h2>จับคู่คำกับลักษณะ</h2><div class="mg"><div>${sh(I).map(i=>`<button class="btn m L" data-k="${i}" onclick="ml(${i},this)">${M[i][0]}</button>`).join('')}</div><div>${sh(I).map(i=>`<button class="btn m" data-k="${i}" onclick="mr(${i},this)">${M[i][1]}</button>`).join('')}</div></div><div id="fb"></div></div>`);bar(0)}
+function ml(i,b){if(b.disabled)return;document.querySelectorAll('.L').forEach(e=>e.classList.remove('sel'));b.classList.add('sel');S.m.s=i;beep(600,.06)}
+function mr(i,b){const m=S.m,s=m.s,f=$('#fb');if(b.disabled)return;
+if(s===null){f.innerHTML=`<div class="fb no">👆 เลือกคำทางซ้ายก่อนนะ</div>`;return}
+if(s==i){document.querySelectorAll(`[data-k="${i}"]`).forEach(e=>{e.disabled=true;e.classList.remove('sel');e.classList.add('right')});
+if(!m.x[i]){S.sc+=10;S.ok++}m.d++;m.s=null;yay();fx();react('hop');hud();bar(m.d/M.length);
+f.innerHTML=`<div class="fb ok">✅ <b>${M[i][0]}</b> — ${M[i][2]}${m.d==M.length?`<button class="btn pri" onclick="end(S.ok,${M.length})">สรุปด่าน ➜</button>`:""}</div>`}
+else{m.x[s]=1;oops();react('wob');b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),500);
+f.innerHTML=`<div class="fb no">💡 ยังไม่ใช่ ไม่เป็นไรนะ! ลองสังเกตตัวอักษรหรือรูปพยัญชนะในคำว่า “${M[s][0]}” อีกครั้ง</div>`}}
+function end(ok,n){const k=S.lv,r=ok/n,st=r>=.9?3:r>=.6?2:1;S.st[k]=st;hud();bar(1);yay();fx();
+R(stage(LV[k].c,"ภารกิจสำเร็จ!")+`<div class="card c"><h2>จบด่านที่ ${k+1}!</h2><div class="stars">${[0,1,2].map(i=>`<span class="${i<st?'on':''}" style="animation-delay:${i*.25}s">⭐</span>`).join('')}</div><p>ตอบถูกครั้งแรก ${ok} / ${n} ข้อ</p><div class="big">${["🥉","🥈","🥇"][st-1]}</div><p class="mut">ได้รับเหรียญรางวัล!</p><button class="btn pri" onclick="${k<3?`go(${k+1})`:'fin()'}">${k<3?"ด่านต่อไป ➜":"ดูผลรวม 🏆"}</button></div>`)}
+function fin(){const mx=270,p=S.sc/mx,rk=p>=.9?["ปรมาจารย์ภาษา","🏆"]:p>=.7?["นักรบภาษาผู้กล้า","🥇"]:p>=.5?["นักสืบภาษามือโปร","🥈"]:["นักสืบภาษาฝึกหัด","🥉"];
+bar(1);yay();fx();R(stage(['d','w','g'],"เยี่ยมมาก! คุณพิชิตอาณาจักรภาษาแล้ว")+`<div class="card c"><div class="big">${rk[1]}</div><h2>${rk[0]}</h2><p>คะแนนรวม <b>${S.sc}</b> / ${mx} • ดาว ⭐ ${S.st.reduce((a,b)=>a+b,0)} / 12</p><p class="big" style="font-size:36px">${LV.map((l,i)=>["🥉","🥈","🥇"][S.st[i]-1]+l.i).join(' ')}</p><button class="btn pri" onclick="start()">🔄 เล่นใหม่อีกครั้ง</button></div>`)}
+start();
+</script></body></html>
